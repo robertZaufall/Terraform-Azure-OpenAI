@@ -1,4 +1,4 @@
-# Deploy OpenAI Services with Terraform
+# Deploy OpenAI Services with Terraform on Azure
 
 ## Login
 ``` bash
@@ -25,7 +25,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{subscrip
 terraform init -backend-config="config.azurerm.tfbackend" -upgrade
 ```
 
-## Get the cognitive services endpoints and access keys for the endpoints
+## Get the cognitive services endpoints and access keys
 ``` bash
 terraform output endpoint
 terraform output primary_access_key
