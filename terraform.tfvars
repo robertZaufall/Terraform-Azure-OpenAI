@@ -33,7 +33,7 @@ models = [
     name     = "o3-mini"
     model    = "o3-mini"
     version  = "2025-01-31"
-    capacity = "10"
+    capacity = "20"
     region   = "East US 2"
   },
   {
@@ -74,6 +74,22 @@ models = [
     model    = "whisper"
     version  = "001"
     capacity = "2"
+    region   = "East US 2"
+  },
+  {
+    id       = 10
+    name     = "gpt-4.1-mini"
+    model    = "gpt-4.1-mini"
+    version  = "2025-04-14"
+    capacity = "200"
+    region   = "East US 2"
+  },
+  {
+    id       = 11
+    name     = "gpt-4.1-nano"
+    model    = "gpt-4.1-nano"
+    version  = "2025-04-14"
+    capacity = "200"
     region   = "East US 2"
   }
 ]
