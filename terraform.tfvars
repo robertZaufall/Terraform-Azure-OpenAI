@@ -91,5 +91,13 @@ models = [
     version  = "2025-04-14"
     capacity = "200"
     region   = "East US 2"
+  },
+  {
+    id       = 12
+    name     = "o4-mini"
+    model    = "o4-mini"
+    version  = "2025-04-16"
+    capacity = "200"
+    region   = "East US 2"
   }
 ]
