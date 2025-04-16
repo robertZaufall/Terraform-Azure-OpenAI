@@ -1,38 +1,40 @@
-# Deploy OpenAI Services with Terraform on Azure
+The goal is to deploy all desired models. Not all models are available in every region. The deployment process iterates over all set model definitions and their respective regions, creating a dedicated resource group for each region.
+
+![Foundry Deployments](foundry_deployments.png)
 
 ## Login
-``` bash
+```bash
 az login
 
-# tenant=AD id
+# Login with a specific tenant ID
 az login --tenant {tenant}
 
-# set active subscription
+# Set the active subscription
 az account set --subscription "{subscription}"
 ```
 
-## Create Service Principal and write to file
-``` bash
-# create service principal with owner role
+## Create Service Principal and Write to File
+```bash
+# Create a service principal with the Owner role
 az ad sp create-for-rbac --role="Owner" --scopes="/subscriptions/{subscription}" --sdk-auth > azure_credentials.json
 
-# alternative: create service principal with contributor role
+# Alternatively, create a service principal with the Contributor role
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{subscription}" --sdk-auth > azure_credentials.json
 ```
 
-## Initialize Terraform and global storage
-``` bash
+## Initialize Terraform and Global Storage
+```bash
 terraform init -backend-config="config.azurerm.tfbackend" -upgrade
 ```
 
-## Get the cognitive services endpoints and access keys
-``` bash
+## Get the Cognitive Services Endpoints and Access Keys
+```bash
 terraform output endpoint
 terraform output primary_access_key
 ```
 
-## Most used terraform commands
-``` bash
+## Common Terraform Commands
+```bash
 terraform init
 terraform init -backend-config="config.azurerm.tfbackend" -upgrade
 terraform validate
