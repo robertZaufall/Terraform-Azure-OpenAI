@@ -48,7 +48,8 @@ terraform destroy
 terraform show
 terraform state list
 terraform state
-terraform output <output_definition>
+terraform output endpoint
+terraform output primary_access_key
 ```
 
 ## Troubleshooting
