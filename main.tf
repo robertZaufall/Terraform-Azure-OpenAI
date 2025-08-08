@@ -19,6 +19,29 @@ resource "azurerm_resource_group" "rg" {
 }
 
 
+resource "azurerm_key_vault" "kv" {
+  name                = "${var.cga_name}-kv"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  tenant_id           = local.azure_creds.tenantId
+
+  sku_name                 = "standard"
+  purge_protection_enabled = false
+}
+
+resource "azurerm_key_vault_access_policy" "kvap" {
+  key_vault_id = azurerm_key_vault.kv.id
+  tenant_id    = local.azure_creds.tenantId
+  object_id    = local.azure_creds.clientId
+
+  key_permissions = [
+    "Create",
+    "Get",
+    "Delete",
+    "Purge",
+    "GetRotationPolicy",
+  ]
+}
 
 resource "azurerm_cognitive_account" "cga" {
   for_each                      = toset(local.openai_regions)
