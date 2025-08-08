@@ -18,6 +18,8 @@ resource "azurerm_resource_group" "rg" {
   location = "East US 2"
 }
 
+
+
 resource "azurerm_cognitive_account" "cga" {
   for_each                      = toset(local.openai_regions)
   name                          = each.value == "East US 2" ? var.cga_name : "${var.cga_name}-${lower(replace(each.value, " ", "-"))}"
@@ -43,8 +45,8 @@ resource "azurerm_cognitive_deployment" "cgd" {
     version = each.value.version
   }
 
-  scale {
-    type     = (each.value.model == "dall-e-3" || each.value.model == "whisper") ? "Standard" : "GlobalStandard"
+  sku {
+    name     = (each.value.model == "dall-e-3" || each.value.model == "whisper") ? "Standard" : "GlobalStandard"
     capacity = tonumber(each.value.capacity)
   }
 }

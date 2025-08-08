@@ -94,5 +94,5 @@ models = [
     version  = "001"
     capacity = "2"
     region   = "East US 2"
-  },
+  }
 ]
