@@ -117,3 +117,17 @@ resource "azurerm_cognitive_deployment" "cgd" {
     capacity = tonumber(each.value.capacity)
   }
 }
+
+
+resource "azurerm_cognitive_deployment" "model_router" {
+  name                 = "model-router"
+  cognitive_account_id = azurerm_ai_services.aiservices["East US 2"].id
+  sku {
+    name     = "GlobalStandard"
+    capacity = 500
+  }
+  model {
+    format = "OpenAI"
+    name   = "model-router"
+  }
+}
