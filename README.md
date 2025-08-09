@@ -6,6 +6,8 @@ The goal is to deploy all desired models. Not all models are available in every 
 
 ![Foundry Deployments](foundry_deployments_2.png)
 
+![Foundry Deployments](foundry_deployments_3.png)
+
 ## Login
 ```bash
 az login
@@ -62,3 +64,6 @@ Get-AzResource -ResourceId /subscriptions/{subscription}/providers/Microsoft.Cog
 # delete selective instances
 az resource delete --ids ...
 ```
+
+## Models
+[Model availability and regions](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions)

@@ -10,7 +10,7 @@ variable "release_number" {
 }
 variable "cga_name" {
   type        = string
-  default     = "openaitest"
+  default     = "x4utestai"
   description = "Cognitive account name or prefix"
 }
 
@@ -18,6 +18,7 @@ variable "models" {
   type = list(object({
     name     = string
     model    = string
+    format   = string
     version  = string
     capacity = string
     region   = string
