@@ -5,6 +5,14 @@ cga_name = "x4utestai"
 
 models = [
   {
+    name     = "gpt-oss-120b"
+    model    = "gpt-oss-120b"
+    format   = "OpenAI-OSS"
+    version  = "1"
+    capacity = "250"
+    region   = "East US 2"
+  },
+{
     name     = "gpt-5"
     model    = "gpt-5"
     format   = "OpenAI"
@@ -117,10 +125,35 @@ models = [
     region   = "East US 2"
   },
   {
+    name     = "grok-3-mini"
+    model    = "grok-3-mini"
+    format   = "xAI"
+    version  = "1"
+    capacity = "100"
+    region   = "East US 2"
+  },
+  {
     name     = "Llama-3.3-70B-Instruct"
     model    = "Llama-3.3-70B-Instruct"
     format   = "Meta"
     version  = "5"
+    capacity = "1"
+    region   = "East US 2"
+  },
+  # this deployment does not work:
+  # {
+  #   name     = "DeepSeek-R1-0528"
+  #   model    = "DeepSeek-R1-0528"
+  #   format   = "DeepSeek"
+  #   version  = "1"
+  #   capacity = "1"
+  #   region   = "East US 2"
+  # },
+  {
+    name     = "mistral-medium-2505"
+    model    = "mistral-medium-2505"
+    format   = "Mistral AI"
+    version  = "1"
     capacity = "1"
     region   = "East US 2"
   },
@@ -132,6 +165,15 @@ models = [
     capacity = "2"
     region   = "East US 2"
   },
+  # this deployment does not work:
+  # {
+  #   name     = "FLUX-1.1-pro"
+  #   model    = "FLUX-1.1-pro"
+  #   format   = "Black Forrest Labs"
+  #   version  = "1"
+  #   capacity = "2"
+  #   region   = "East US 2"
+  # },
   {
     name     = "dall-e-3"
     format   = "OpenAI"
@@ -148,13 +190,4 @@ models = [
     capacity = "2"
     region   = "West US 3"
   }
-  # ,
-  # {
-  #   name     = "FLUX-1.1-pro"
-  #   model    = "FLUX-1.1-pro"
-  #   format   = "Black Forrest Labs"
-  #   version  = "1"
-  #   capacity = "2"
-  #   region   = "East US 2"
-  # }
 ]
