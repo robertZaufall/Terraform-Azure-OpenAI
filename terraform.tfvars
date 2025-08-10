@@ -140,15 +140,14 @@ models = [
     capacity = "1"
     region   = "East US 2"
   },
-  # this deployment does not work:
-  # {
-  #   name     = "DeepSeek-R1-0528"
-  #   model    = "DeepSeek-R1-0528"
-  #   format   = "DeepSeek"
-  #   version  = "1"
-  #   capacity = "1"
-  #   region   = "East US 2"
-  # },
+  {
+    name     = "DeepSeek-R1-0528"
+    model    = "DeepSeek-R1-0528"
+    format   = "DeepSeek"
+    version  = "1"
+    capacity = "1"
+    region   = "East US 2"
+  },
   {
     name     = "mistral-medium-2505"
     model    = "mistral-medium-2505"
@@ -165,15 +164,22 @@ models = [
     capacity = "2"
     region   = "East US 2"
   },
-  # this deployment does not work:
-  # {
-  #   name     = "FLUX-1.1-pro"
-  #   model    = "FLUX-1.1-pro"
-  #   format   = "Black Forrest Labs"
-  #   version  = "1"
-  #   capacity = "2"
-  #   region   = "East US 2"
-  # },
+  {
+    name     = "FLUX.1-Kontext-pro"
+    model    = "FLUX.1-Kontext-pro"
+    format   = "Black Forest Labs"
+    version  = "1"
+    capacity = "1"
+    region   = "East US 2"
+  },
+  {
+    name     = "FLUX-1.1-pro"
+    model    = "FLUX-1.1-pro"
+    format   = "Black Forest Labs"
+    version  = "1"
+    capacity = "1"
+    region   = "East US 2"
+  },  
   {
     name     = "dall-e-3"
     format   = "OpenAI"
