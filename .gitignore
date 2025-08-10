@@ -3,3 +3,4 @@ azure_credentials.json
 config.azurerm.tfbackend
 .terraform.*
 .terraform/
+CLAUDE.md
