@@ -86,20 +86,6 @@ resource "azurerm_ai_foundry_project" "fp" {
   }
 }
 
-# resource "azurerm_cognitive_account" "cga" {
-#   for_each                      = toset(local.openai_regions)
-#   name                          = each.value == "East US 2" ? var.cga_name : "${var.cga_name}-${lower(replace(each.value, " ", ""))}"
-#   location                      = each.value
-#   resource_group_name           = azurerm_resource_group.rg.name
-#   kind                          = "OpenAI"
-#   sku_name                      = "S0"
-#   public_network_access_enabled = true
-#   custom_subdomain_name         = each.value == "East US 2" ? var.cga_name : "${var.cga_name}-${lower(replace(each.value, " ", ""))}"
-#   network_acls {
-#     default_action = "Allow"
-#   }
-# }
-
 resource "azurerm_cognitive_deployment" "cgd" {
   for_each = local.models_map
   name     = each.value.model
