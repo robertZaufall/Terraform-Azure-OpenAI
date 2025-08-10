@@ -1,4 +1,4 @@
-# Deploy Azure OpenAI models with Terraform
+# Deploy Azure AI Foundry models with Terraform
 
 The goal is to deploy all desired models. Not all models are available in every region. The deployment process iterates over all set model definitions and their respective regions, creating a dedicated resource group for each region.  
 
